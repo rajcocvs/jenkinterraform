@@ -15,7 +15,8 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/CodeSagarOfficial/jenkins-scripts.git'
+                //git branch: 'main', url: 'https://github.com/CodeSagarOfficial/jenkins-scripts.git'
+                checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/rajcocvs/jenkinterraform.git']])
             }
         }
         stage('Terraform init') {
